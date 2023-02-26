@@ -14,14 +14,6 @@ int GenRandInt(int max, int min) {
     return rand() % (max - min + 1) + min;
 }
 
-std::string CreatePassword(int length) {
-    std::string password;
-    for (int i = 0; i < length; i++) {
-        password += (char) (GenRandInt('~','@'));
-    }
-    return password;
-}
-
 bool CheckPassword(std::string password) {
     if (password.length() < 8) {
         return false;
@@ -51,6 +43,14 @@ bool CheckPassword(std::string password) {
     }
 
     return false;
+}
+
+std::string CreatePassword(int length) {
+    std::string password;
+    for (int i = 0; i < length; i++) {
+        password += (char) (GenRandInt('~','!'));
+    }
+    return password;
 }
 
 int main(int argc, char *argv[]) {
