@@ -1,1 +1,1 @@
-A Password generator & checker(W.I.P) in c++
+A Password generator & checker in c++
