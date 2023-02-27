@@ -63,11 +63,27 @@ int main(int argc, char *argv[]) {
     std::cin >> action;
 
     if (action == 1) {
-        int length;
-        std::cout << "length of the password: ";
-        std::cin >> length;
-        srand(time(0));
-        std::cout << CreatePassword(length) << std::endl;
+        accept_password = false;
+        while (accept_password = false) {
+            int length;
+            std::cout << "length of the password: ";
+            std::cin >> length;
+            srand(time(0));
+            std::cout << CreatePassword(length) << std::endl;
+            
+            if (!Checkpassword()) {
+                char option;
+                std::cout << "This password is not strong retry?[Y/n]";
+                std::cin >> option
+                if (option == 'n' || option == 'N') {
+                    accept_password = false;
+                } else {
+                    accept_password = true;
+                }
+            } else {
+                accept_password = true;
+            }
+        }
     }
     else if (action == 2) {
         std::string password;
